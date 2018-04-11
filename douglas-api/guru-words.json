@@ -1,0 +1,730 @@
+{
+  "categories": {
+    "needfinding": {
+      "words": [
+        "needfind",
+        "need-find"
+      ],
+      "people": [
+        "Leesha",
+        "Jamie",
+        "Ryan",
+        "Grace"
+      ]
+    },
+    "ui/ux_design": {
+      "words": [
+        "ui",
+        "ux",
+        "interface",
+        "experience",
+        "storyboard"
+      ],
+      "people": [
+        "Allisun",
+        "Lily",
+        "Grace",
+        "Eunice",
+        "Meg"
+      ]
+    },
+    "brainstorming": {
+      "words": [
+        "brainstorm",
+        "idea",
+        "come up with"
+      ],
+      "people": [
+        "Jennie",
+        "Armaan",
+        "Eunice",
+        "Grace",
+        "Morgan",
+        "Allison Lu",
+        "Sehmon",
+        "Olivia"
+      ]
+    },
+    "user_testing": {
+      "words": [
+        "user test"
+      ],
+      "people": [
+        "Morgan",
+        "Lily",
+        "Sehmon",
+        "Jamie",
+        "Kapil",
+        "Armaan"
+      ]
+    },
+    "paper_prototyping": {
+      "words": [
+        "paper prototype"
+      ],
+      "people": [
+        "Meg",
+        "Ryan",
+        "Grace"
+      ]
+    },
+    "photoshop": {
+      "words": [
+        "photoshop"
+      ],
+      "people": [
+        "Garrett",
+        "Sarah",
+        "Allison",
+        "Maixine",
+        "Sanfeng",
+        "Jennie",
+        "Allisun"
+      ]
+    },
+    "illustrator": {
+      "words": [
+        "illustrator"
+      ],
+      "people": [
+        "Garrett",
+        "Sarah",
+        "Allison",
+        "Jennie",
+        "Allisun"
+      ]
+    },
+    "indesign": {
+      "words": [
+        "indesign"
+      ],
+      "people": [
+        "Allison",
+        "Maxine",
+        "Sarah",
+        "Jennie",
+        "Allisun"
+      ]
+    },
+    "audacity": {
+      "words": [
+        "audacity"
+      ],
+      "people": [
+        "Garrett"
+      ]
+    },
+    "graphic_design": {
+      "words": [
+        "graphic"
+      ],
+      "people": [
+        "Sarah",
+        "Allisun",
+        "David",
+        "Leesha",
+        "Olivia"
+      ]
+    },
+    "voice_over": {
+      "words": [
+        "voice"
+      ],
+      "people": [
+        "Garrett"
+      ]
+    },
+    "3d_printing": {
+      "words": [
+        "3d print"
+      ],
+      "people": [
+        "Ryan",
+        "Sehmon"
+      ]
+    },
+    "sketch": {
+      "words": [
+        "sketch"
+      ],
+      "people": [
+        "Jennie",
+        "Allisun",
+        "David",
+        "Grace",
+        "Sehmon"
+      ]
+    },
+    "ios": {
+      "words": [
+        "ios",
+        "iphone"
+      ],
+      "people": [
+        "Leesha",
+        "Meg",
+        "Yongsung",
+        "Andrew",
+        "Kapil"
+      ]
+    },
+    "macos": {
+      "words": [
+        "mac"
+      ],
+      "people": [
+        "Meg",
+        "Andrew"
+      ]
+    },
+    "watchos": {
+      "words": [
+        "watch"
+      ],
+      "people": [
+        "Andrew",
+        "Kapil"
+      ]
+    },
+    "tvos": {
+      "words": [
+        "apple tv",
+        "appletv"
+      ],
+      "people": [
+        "Andrew"
+      ]
+    },
+    "xcode": {
+      "words": [
+        "xcode"
+      ],
+      "people": [
+        "Garrett",
+        "Andrew",
+        "Meg",
+        "Kapil",
+        "Leesha"
+      ]
+    },
+    "ibeacons": {
+      "words": [
+        "ibeacons",
+        "beacons"
+      ],
+      "people": [
+        "Sasha",
+        "Leesha",
+        "Kapil"
+      ]
+    },
+    "mlab/mongodb": {
+      "words": [
+        "mlab",
+        "mongo",
+        "mongodb"
+      ],
+      "people": [
+        "Leesha",
+        "Armaan",
+        "Kapil",
+        "Sehmon"
+      ]
+    },
+    "git": {
+      "words": [
+        "git",
+        "github",
+        "rebase"
+      ],
+      "people": [
+        "Leesha",
+        "Sarah",
+        "Sasha",
+        "Meg",
+        "Jamie",
+        "Grace",
+        "Armaan",
+        "Ryan",
+        "Nneoma",
+        "Lily",
+        "Eli",
+        "Ankita",
+        "Morgan",
+        "Megan",
+        "Allison",
+        "Andrew",
+        "Daniel",
+        "Sangfeng",
+        "Maxine",
+        "David",
+        "Olivia",
+        "Kapil",
+        "Gino",
+        "Sehmon",
+        "Maggie"
+      ]
+    },
+    "latex": {
+      "words": [
+        "markdown",
+        "pandoc",
+        "latex",
+        "typeset"
+      ],
+      "people": [
+        "Sarah",
+        "Kapil",
+        "Maxine",
+        "Maggie",
+        "Nneoma",
+        "Gino"
+      ]
+    },
+    "electron": {
+      "words": [
+        "electron"
+      ],
+      "people": [
+        "Maxine"
+      ]
+    },
+    "vim": {
+      "words": [
+        "vim",
+        "vimrc"
+      ],
+      "people": [
+        "Sarah",
+        "Sehmon",
+        "Armaan",
+        "Maggie",
+        "Ryan"
+      ]
+    },
+    "command_line": {
+      "words": [
+        "command line",
+        "dotfile",
+        "bash",
+        "script"
+      ],
+      "people": [
+        "Sasha",
+        "Ryan",
+        "Grace",
+        "Eli",
+        "Meg",
+        "Sehmon"
+      ]
+    },
+    "devops": {
+      "words": [
+        "devops",
+        "nginx",
+        "docker",
+        "jenkins"
+      ],
+      "people": [
+        "Lily",
+        "Sasha",
+        "Olivia"
+      ]
+    },
+    "js_env": {
+      "words": [
+        "webpack",
+        "yarn",
+        "npm",
+        "nvm",
+        "prettier"
+      ],
+      "people": [
+        "Sarah",
+        "Eli",
+        "Josh",
+        "Maxine",
+        "David",
+        "Daniel",
+        "Sehmon"
+      ]
+    },
+    "html": {
+      "words": [
+        "html",
+        "html5",
+        "semantic"
+      ],
+      "people": [
+        "Grace",
+        "Eunice",
+        "Sarah",
+        "Alex",
+        "Megan",
+        "Olivia",
+        "Eli",
+        "Allison",
+        "Maxine",
+        "Sanfeng",
+        "David",
+        "Gino",
+        "Sehmon"
+      ]
+    },
+    "css": {
+      "words": [
+        "sass",
+        "css"
+      ],
+      "people": [
+        "Sarah",
+        "Grace",
+        "Eunice",
+        "David",
+        "Megan",
+        "Olivia",
+        "Allison",
+        "Daniel",
+        "Sanfeng",
+        "Maxine"
+      ]
+    },
+    "swift": {
+      "words": [
+        "swift"
+      ],
+      "people": [
+        "Meg",
+        "Andrew",
+        "Kapil",
+        "Leesha"
+      ]
+    },
+    "objective_c": {
+      "words": [
+        "objective c",
+        "obj-c",
+        "objective-c"
+      ],
+      "people": [
+        "Meg",
+        "Andrew",
+        "Sam"
+      ]
+    },
+    "javascript": {
+      "words": [
+        "js",
+        "javascript"
+      ],
+      "people": [
+        "Sarah",
+        "Josh",
+        "Jamie",
+        "Grace",
+        "Megan",
+        "Lily",
+        "Armaan",
+        "Olivia",
+        "Eli",
+        "Sasha",
+        "Nneoma",
+        "Kapil",
+        "David",
+        "Sehmon",
+        "Maxine"
+      ]
+    },
+    "python": {
+      "words": [
+        "python",
+        "py"
+      ],
+      "people": [
+        "Sasha",
+        "Jamie",
+        "Eli",
+        "Ryan",
+        "Allison",
+        "Kapil",
+        "Olivia",
+        "Leesha",
+        "Sehmon"
+      ]
+    },
+    "meteor": {
+      "words": [
+        "meteor",
+        "galaxy"
+      ],
+      "people": [
+        "Jennie",
+        "Allisun",
+        "Meg",
+        "Eli",
+        "Ryan",
+        "Kapil",
+        "David",
+        "Sehmon"
+      ]
+    },
+    "node": {
+      "words": [
+        "node",
+        "npm",
+        "nvm"
+      ],
+      "people": [
+        "Sarah",
+        "Armaan",
+        "Josh",
+        "David",
+        "Kapil",
+        "Sehmon",
+        "Ryan"
+      ]
+    },
+    "sheets": {
+      "words": [
+        "google sheets",
+        "sheets"
+      ],
+      "people": [
+        "Haoqi",
+        "Kapil",
+        "Maxine"
+      ]
+    },
+    "react": {
+      "words": [
+        "react"
+      ],
+      "people": [
+        "Sarah",
+        "Morgan",
+        "Josh",
+        "Armaan",
+        "Megan",
+        "Daniel",
+        "Maxine",
+        "David",
+        "Sehmon",
+        "Sam"
+      ]
+    },
+    "redux": {
+      "words": [
+        "redux"
+      ],
+      "people": [
+        "Sarah",
+        "Morgan",
+        "Armaan",
+        "David",
+        "Sehmon"
+      ]
+    },
+    "slackbots": {
+      "words": [
+        "slack",
+        "slackbot"
+      ],
+      "people": [
+        "Sasha",
+        "Armaan"
+      ]
+    },
+    "d3": {
+      "words": [
+        "d3"
+      ],
+      "people": [
+        "Nneoma",
+        "David"
+      ]
+    },
+    "flask": {
+      "words": [
+        "flask"
+      ],
+      "people": [
+        "Jennie",
+        "Leesha",
+        "Yongsung",
+        "Nneoma",
+        "Meg",
+        "Ryan",
+        "Kapil",
+        "Sehmon",
+        "Sam"
+      ]
+    },
+    "api": {
+      "words": [
+        "api"
+      ],
+      "people": [
+        "Jennie",
+        "Eunice",
+        "Sarah",
+        "Sehmon"
+      ]
+    },
+    "android": {
+      "words": [
+        "android"
+      ],
+      "people": [
+        "Ryan",
+        "Morgan"
+      ]
+    },
+    "data_science": {
+      "words": [
+        "data science"
+      ],
+      "people": [
+        "Ryan",
+        "Kapil"
+      ]
+    },
+    "nlp": {
+      "words": [
+        "nlp",
+        "language"
+      ],
+      "people": [
+        "Ryan",
+        "Kapil"
+      ]
+    },
+    "aws": {
+      "words": [
+        "aws"
+      ],
+      "people": [
+        "Megan"
+      ]
+    },
+    "websockets": {
+      "words": [
+        "websockets",
+        "web sockets",
+        "socket"
+      ],
+      "people": [
+        "Josh",
+        "Eli",
+        "Sarah",
+        "Armaan",
+        "Sehmon"
+      ]
+    },
+    "ruby": {
+      "words": [
+        "ruby",
+        "rails"
+      ],
+      "people": [
+        "Olivia",
+        "Sam"
+      ]
+    },
+    "design_arguments": {
+      "words": [
+        "design",
+        "arguments"
+      ],
+      "people": [
+        "Leesha",
+        "Meg"
+      ]
+    },
+    "lit_review": {
+      "words": [
+        "lit review",
+        "literature"
+      ],
+      "people": [
+        "Leesha"
+      ]
+    },
+    "crowdsourcing": {
+      "words": [
+        "crowd",
+        "crowdsource"
+      ],
+      "people": [
+        "Haoqi"
+      ]
+    },
+    "papers": {
+      "words": [
+        "papers",
+        "research papers"
+      ],
+      "people": [
+        "Jennie",
+        "Sarah",
+        "Leesha"
+      ]
+    },
+    "qualitative_methods": {
+      "words": [
+        "qualitative"
+      ],
+      "people": [
+        "Leesha"
+      ]
+    },
+    "interview_questions": {
+      "words": [
+        "interview"
+      ],
+      "people": [
+        "Jamie"
+      ]
+    },
+    "study_design": {
+      "words": [
+        "study design",
+        "study"
+      ],
+      "people": [
+        "Yongsung"
+      ]
+    },
+    "game_design": {
+      "words": [
+        "game",
+        "game design"
+      ],
+      "people": [
+        "Nell",
+        "Garrett",
+        "Sanfeng"
+      ]
+    },
+    "src": {
+      "words": [
+        "src",
+        "student research conference"
+      ],
+      "people": [
+        "Jennie",
+        "Allisun",
+        "Sarah",
+        "Armaan"
+      ]
+    },
+    "urg": {
+      "words": [
+        "urg"
+      ],
+      "people": [
+        "Grace",
+        "Megan"
+      ]
+    }
+  }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+        <style>
+    .branding-below {
+      bottom: 56px;
+      top: 0;
+    }
+    .branding-text {
+      left: 7px;
+      position: relative;
+      top: 3px;
+    }
+    .col-contain {
+      overflow: hidden;
+    }
+    .col-one {
+      float: left;
+      width: 50%;
+    }
+    .logo {
+      vertical-align: middle;
+    }
+    .radio-spacer {
+      height: 20px;
+    }
+    .width-100 {
+      width: 100%;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>Douglas Helper Recommender (1)</h1>
+    <div class="block form-group">
+      <label for="help-text"><b>I need help with...</b></label>
+      <textarea class="width-100" id="help-text" rows="4"></textarea>
+    </div>
+    <div class="block" id="button-bar">
+      <button class="blue" id="get-helpers">Get Helpers</button>
+    </div>
+    <iframe id="loading-image" src="https://giphy.com/embed/52qtwCtj9OLTi" width="240" height="103" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    <div id="helper-container">
+      <div id="helper-response">
+    </div>
+    </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+  
+  $(function() {
+    $('#loading-image').hide();
+    $('#get-helpers').click(getHelperData);
+  });
+  
+  function getHelperData(){
+    $('#loading-image').show();
+    $('#helper-container').html('<div id="helper-response"></div>');
+    var help_text = $('#help-text').val();
+    google.script.run
+      .withSuccessHandler(
+        function(returnSuccess, element) {
+          console.log(returnSuccess);      
+          var guru_result = returnSuccess['guru-result'];
+          var pair_result = returnSuccess['pair-result'];
+          $('#loading-image').hide();
+          // Or, using array extras
+          Object.entries(pair_result).forEach(([key, value]) => {
+            var category = key;
+            console.log(`${category}`);
+            for (i=0;i<value.length;i++){
+              var new_element = `<p>${value[i]['name']}<p>`;
+              $('#helper-response').after(new_element);
+            }
+            $('#helper-response').after(`<h4 id=${category}-section>${category}</h4>`);
+            $('#helper-response').after('<hr >');
+          });
+          $('#helper-response').after('<hr >');
+          $('#helper-response').after('<h1>Pair Research Recommendation</h1>');
+          $('#helper-response').after('<hr >');
+          $('#helper-response').after('<br >');
+
+          Object.entries(guru_result).forEach(([key, value]) => {
+            var category = key;
+            console.log(`${category}`);
+            for (i=0;i<value.length;i++){
+              var new_element = `<p>${value[i]}</p>`;
+              $('#helper-response').after(new_element);
+            }
+            $('#helper-response').after(`<h2 id=${category}-section>${category}</h2>`);
+            $('#helper-response').after('<hr >');
+          });
+          $('#helper-response').after('<hr >');
+          $('#helper-response').after('<h1>Guru List Recommendation</h1>');
+          $('#helper-response').after('<hr >');
+          $('#helper-response').after('<br >');
+        })
+      .withFailureHandler(
+        function(msg, element) {
+          showError(msg, $('#button-bar'));
+        })
+      .withUserObject(this)
+      .callAPI(help_text);
+  }
+  
+  function showError(msg, element) {
+    var div = $('<div id="error" class="error">' + msg + '</div>');
+    $(element).after(div);
+  }
+  </script>
+  </body>
+</html>
+
+
+
