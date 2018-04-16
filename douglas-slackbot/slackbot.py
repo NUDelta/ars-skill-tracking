@@ -35,7 +35,7 @@ slack_client = SlackClient(auth_token)
 
 for i in xrange(len(user_values)):
   if(len(blocker_values[i]) >= 3) and (len(user_values[i]) >= 4):
-    if(blocker_values[i][2]):
+    if(blocker_values[i][2]) and (blocker_values[i][2] != '#N/A'):
       blocker_string = "{}'s blocker for the week is: {}".format(user_values[i][4], blocker_values[i][2])
       res = slack_client.api_call(
           'chat.postMessage',
