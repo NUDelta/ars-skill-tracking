@@ -82,7 +82,8 @@ def sendAll():
   for i in xrange(len(user_values)):
     if(len(blocker_values[i]) >= 3) and (len(user_values[i]) >= 4):
       if(blocker_values[i][2]) and (blocker_values[i][2] != '#N/A'):
-        blocker_string = "Hey {}, I'm Douglas: a bot here to help you make progress on your project! In studio you said your biggest blocker for the week was '{}', are you still having trouble? If so, check back to The Weekly to find someone who can help!".format(user_values[i][0], blocker_values[i][2])
+        # blocker_string = "Hey {}, I'm Douglas: a bot here to help you make progress on your project! In studio you said your biggest blocker for the week was '{}', are you still having trouble? If so, check back to The Weekly to find someone who can help!".format(user_values[i][0], blocker_values[i][2])
+        blocker_string = "Studio is tomorrow, and that means we'll be filling out The Weekly and doing Pair Research! To get the most out of your time, try spending some time thinking about what blocker is most pressing this week so you'll be prepped for tomorrow."
         user_id = user_values[i][4]
         res = slack_client.api_call(
             'chat.postMessage',
@@ -92,6 +93,7 @@ def sendAll():
             username='Douglas Reminder'
             )
 
+sendAll()
 
 # api_call = slack_client.api_call('users.list')
 # if api_call.get('ok'):
