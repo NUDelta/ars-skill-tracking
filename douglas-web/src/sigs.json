@@ -1,0 +1,13 @@
+{
+  "groups":
+  {
+    "ARS": ["Sehmon", "Victoria", "Leesha", "Haoqi", "Nell"],
+    "RALE": ["Sarah", "David", "Maxine", "Daniel", "Haoqi", "Nell"],
+    "LFG": ["Megan", "Allison Lu", "Nell"],
+    "CC": ["Armaan", "Josh", "Garrett", "Nell"],
+    "OTG": ["Olivia", "Sam", "Kapil", "Priya", "Maggie", "Yongsung", "Haoqi"],
+    "BB": ["Jennie", "Allison Sun", "Meg", "Andrew", "Sanfeng", "Gino", "Ryan", "Haoqi"],
+    "BBQ": ["Leesha", "Yongsung", "Ryan", "Haoqi"],
+    "BEACH": ["Garrett", "Nell"]
+  }
+}
