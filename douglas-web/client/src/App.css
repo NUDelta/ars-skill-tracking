@@ -1,0 +1,43 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #222;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.resultContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas: 
+    "categories names";
+  min-width: 100%;
+  background-color: lightGrey;
+}
+
+.categories {
+  background-color: grey;
+  grid-area: categories;
+}
+
+.names {
+  grid-area: names;
+}
+
+@media only screen and (max-width: 400px)   {
+  .resultContainer {
+      grid-template-areas:
+      "names names"
+      "categories categories";
+  }
+}
