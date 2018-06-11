@@ -1,3 +1,5 @@
+// The API server used to handle requests from the frontend
+
 const wordDb = require('./WordDB.json');
 const guruWords = require('./guru-words.json')
 const express = require('express');
@@ -13,10 +15,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-
-/*
-app.use(express.static(path.join(__dirname, 'client/build')));
-*/
 
 var sheetKey = '1uF8K1LMLqv-El1_41j8u029bTFuC4x1WAyMbpBJC8DU';
 var doc = new GoogleSpreadsheet(sheetKey);

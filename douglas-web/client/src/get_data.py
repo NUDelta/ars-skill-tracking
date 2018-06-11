@@ -1,3 +1,8 @@
+'''
+Running this function will reach out to Google Sheets and update the SkillDB and CategoriesDB
+This was called to "update" the Guru List on the server during the S18 status update
+'''
+
 from __future__ import print_function
 import os
 import json
@@ -6,9 +11,11 @@ from apiclient.discovery import build
 from httplib2 import Http
 from oauth2client import file, client, tools
 
+# https://docs.google.com/spreadsheets/d/1uF8K1LMLqv-El1_41j8u029bTFuC4x1WAyMbpBJC8DU/edit#gid=0
 SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
 SPREADSHEET_ID = '1ifLpxHEPuxZR7hrEEc3bUjyAS4XKZQ3JogOUCh8q9sc'
 
+# Taken from the Google Sheets example code
 store = file.Storage('credentials.json')
 creds = store.get()
 if not creds or creds.invalid:

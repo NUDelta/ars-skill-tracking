@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+// SkillDB is the dictionary of everyone's name, and their respective skills listed on the Guru List
 import SkillDB from './skillDb';
+// CategoriesDB is the list of all categories and subcategories in DTR
 import CategoriesDB from './categoriesDb';
+// SigDB is the list of all students and the SIGs they belong to
 import SigDB from './sigs';
 import './App.css';
 
@@ -35,6 +38,8 @@ class App extends Component {
     this.updateDisplayNodes = this.updateDisplayNodes.bind(this);
   };
 
+  // Takes in a person's name, and the category they need help with
+  // Returns the people who can help from the Douglas API
   callApi = async (name, category) => {
     var response;
     if(category === undefined){
@@ -47,6 +52,7 @@ class App extends Component {
     return body;
   }
 
+  // Given a task, returns the categories the task is a part of
   getTaskCategories = async (name, task) => {
     var response = [];
     if (name && task) {
@@ -57,6 +63,7 @@ class App extends Component {
     return body;
   };
 
+  // Grabs the availability numbers from the server
   getRequestedData = async (testInput) => {
     var response;
     response = await fetch('/api/requestData');
@@ -65,6 +72,7 @@ class App extends Component {
     return body;
   };
 
+  // Wrapper function around getRequestedData
   updateRequestedData(testInput) {
     var requestData;
     this.getRequestedData()
@@ -72,6 +80,7 @@ class App extends Component {
     .catch(err => console.log(err))
   };
 
+  // Handles clicking on an additional filter in the Douglas UI
   async handleFilterClick(filterName, category) {
     this.callApi(this.state.username, filterName)
       .then(res => this.setState({ping: res}))
@@ -86,13 +95,8 @@ class App extends Component {
     this.updateDisplayNodes();
     window.scrollTo(0, 0);
   };
-
-
-  // this.state.category !== '' &&
-  // this.state.username !== personName &&
-  // SkillDB[personName][this.state.category].includes(this.state.categoryFilter) &&
-  // !this.state.sigMembers.includes(personName) &&
   
+  // Given a change in categories, update the names displayed to match the set filter
   updateDisplayNodes() {
     if (this.state.category === ''){
       return;
@@ -112,6 +116,7 @@ class App extends Component {
     
   }
 
+  // Handles the initial splash page where users "log in" by clicking their name
   handleNameClick(name) {
     this.callApi(name, undefined)
       .then(res => this.setState({ping: res}))
@@ -130,10 +135,12 @@ class App extends Component {
     });
   }
 
+  // Handles change in the task entry box
   handleInputChange(e) {
     this.setState({task: e.target.value});
   }
 
+  // Handles clicking the submit button on the task entry box
   handleTaskSubmit(e) {
     e.preventDefault();
     this.getTaskCategories(this.state.username, this.state.task)
@@ -143,11 +150,13 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
+  // When the page finishes loading, request new availability data every 100ms
   componentDidMount() {
     setInterval(this.updateRequestedData, 100);
   }
 
   render() {
+    // If no username set, show the initial splash page
     if(this.state.username === '') {
       return (
         <div>
@@ -160,12 +169,17 @@ class App extends Component {
         </div>
       )
     }
+
+    // Once a user logs in, show this UI
     return (
       <div className="App">
         <header className="App-header">
           <h1>Hi {this.state.username}, Welcome to Douglas</h1>
           <p>Douglas highlights additional people on the Guru List who can help you on certain tasks</p>
         </header>
+        {/* 
+          For each category chosen, list it at the top of the UI
+        */}
         {
           this.state.categoryList.map(category => 
             <p>{category}</p>
@@ -173,7 +187,11 @@ class App extends Component {
         }
         <div className="resultContainer" >
           <div className="categories">
-            {/* <form onSubmit={this.handleTaskSubmit}>
+            {/* 
+
+            TEXT INPUT FORM, COULDN'T GET IT WORKING BEFORE STATUS UPDATE
+
+            <form onSubmit={this.handleTaskSubmit}>
               <label>
               Enter your task:
               <textarea value={this.state.task} onChange={this.handleInputChange} style={{display: "block", width: "100%"}}/>
@@ -188,6 +206,7 @@ class App extends Component {
                     {category}
                   </h1>
                   {
+                    // For each higher leve category (Design, Tech, Research), list the subcategories underneath it (IOS, Android, Python)
                     CategoriesDB[category].map( categoryDetail => (
                       <button onClick={() => this.handleFilterClick(categoryDetail, category)}><p>{categoryDetail}</p></button>
                     ))
