@@ -171,6 +171,7 @@ class App extends Component {
     }
 
     // Once a user logs in, show this UI
+    // MAIN DOUGLAS APPLICATION
     return (
       <div className="App">
         <header className="App-header">

@@ -7,13 +7,14 @@ from __future__ import print_function
 import os
 import json
 
-from apiclient.discovery import build
+from googleapiclient.discovery import build
 from httplib2 import Http
 from oauth2client import file, client, tools
 
 # https://docs.google.com/spreadsheets/d/1uF8K1LMLqv-El1_41j8u029bTFuC4x1WAyMbpBJC8DU/edit#gid=0
 SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
-SPREADSHEET_ID = '1ifLpxHEPuxZR7hrEEc3bUjyAS4XKZQ3JogOUCh8q9sc'
+
+SPREADSHEET_ID = '1XPFVtXZzVcMtGWyRXAufuyKqIpQKqCxS6cGxDF0Amd8'
 
 # Taken from the Google Sheets example code
 store = file.Storage('credentials.json')
@@ -58,4 +59,10 @@ with open('categoriesDb.json', 'w') as outfile:
   json.dump(categories_db, outfile)
 with open('skillDb.json', 'w') as outfile:
   json.dump(skill_db, outfile)
+
+
+"""
+Bunch of comments to add to commit please work now
+we need to get the new spreadsheet working now
+"""
 
