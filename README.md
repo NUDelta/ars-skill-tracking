@@ -13,5 +13,14 @@ This repo contains the code used during Spring 2018 when we were trying to test 
 ## douglas-sidebar
 The code for the Google Sheets add-on *Douglas Recommender*. This code is still used as the base behind the Sheets plugin.
 
+
 ## douglas-api
 The *outdated* code that used to power the Douglas backend, and return helper recommendations based on the task a user inputs to the system.
+
+
+## ipm-scraper
+This is a python script to collect completed learning modules by members of DTR. The script dumps the information into a csv.
+
+
+## canvas-sections-completed
+This is a python script to collect information on sections completed in the cavnas. The script dumps the information into a csv.
