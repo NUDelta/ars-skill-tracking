@@ -16,7 +16,6 @@ SAMPLE_RANGE_NAME = 'IPM!B2:H117'
 helper_names = ["Maxine",
 "Cooper",
 "Caryl",
-"Gabriel",
 "Shankar",
 "Josh",
 "Kapil",
@@ -24,16 +23,22 @@ helper_names = ["Maxine",
 "Ryan L",
 "Leesha",
 "Yongsung",
-"Daniel",
 "Salome",
 "Abizar",
-"Harrison"]
+"Harrison",
+"Olivia",
+"Zev",
+"Nina",
+"Amy",
+"Mary",
+"David",
+"Vishal",
+"Garret"]
 
 all_ipm_sheets = [
 "https://docs.google.com/spreadsheets/d/1bec84SS8HLfCJwGoYRpBH2_Wtks1dKQpm43p2FtNdEs/edit#gid=0",
 "https://docs.google.com/spreadsheets/d/17DyrbWEBsjfPGVhOVKRGyGI6LjVCE4Zzg56MSlPUvoA/edit#gid=0",
 "https://docs.google.com/spreadsheets/d/1cO_GCGCTPV_SCK2auuyBMoj-GRvH_Rrl3BijwbATO4Y/edit#gid=0",
-"https://docs.google.com/spreadsheets/d/1weUMsUVde1KsOzCBuMtuPJseANMG4xCLSOktCkPtVK4/edit#gid=0",
 "https://docs.google.com/spreadsheets/d/18ansNiBgtx4nl9eUaFiMsxM02IAWG0kYPPO6vn13R-E/edit#gid=0",
 "https://docs.google.com/spreadsheets/d/1E7UwRlzNdbGsIGU6WcMuHI77R6JXO14eZcPm36eOL1Y/edit#gid=0",
 "https://docs.google.com/spreadsheets/d/1xEJ3dDYqNA9SlufiD3GF4mN3DzvXg_JMc3D25rUjSHA/edit#gid=0",
@@ -41,10 +46,17 @@ all_ipm_sheets = [
 "https://docs.google.com/spreadsheets/d/1anytwho_bmYbAAPOkURNJsYsGajRrgG5kM8tbJZ1O90/edit#gid=0",
 "https://docs.google.com/spreadsheets/d/1hqscLbWvQknikhcLaSKfQF06KTOEpJabVv8oDMlRQFQ/edit#gid=0",
 "https://docs.google.com/spreadsheets/d/15xgQc4kQa9jEVguF-NtlCCshk74wfN1Eyp8ads6dRVw/edit#gid=0",
-"https://docs.google.com/spreadsheets/d/1YJPdlYFJjIzhMH3XEKzjtIrSqnLW5wgsr8NMPUzRpl4/edit#gid=0",
 "https://docs.google.com/spreadsheets/d/1Kpf9ZAjmUKHk6cVeeJh7ve46LdBdOM3QtCz2pgqY1M4/edit#gid=0",
 "https://docs.google.com/spreadsheets/d/1qJAJQv2trxYm-aWrgRJL6cmIfIWSC6-otMe3WQmv9AU/edit#gid=0",
-"https://docs.google.com/spreadsheets/d/1tZZUUFli_atZneUTAiEjPTZryZnc_Q03Kn1JBqMpUJw/edit#gid=0"]
+"https://docs.google.com/spreadsheets/d/1tZZUUFli_atZneUTAiEjPTZryZnc_Q03Kn1JBqMpUJw/edit#gid=0",
+"https://docs.google.com/spreadsheets/d/12FGZ-vp9KUt3IkdcZcUoeKuF5yB9K0z75BUZETLql_o/edit#gid=0",
+"https://docs.google.com/spreadsheets/u/1/d/1xCTWPbClyRUcZX9x6v45fZsP_ruUwlhp7PEIIl0JtAM/edit#gid=0",
+"https://docs.google.com/spreadsheets/d/1MimE-Uen0h3yy8cE3IDNF-hdHUQKM2ujl6gVvret6lI/edit#gid=0",
+"https://docs.google.com/spreadsheets/d/19ROmPe5PGW5cekvPPW1ukcGv_OxXdFXKod_-1rXPgWE/edit#gid=0",
+"https://docs.google.com/spreadsheets/d/1aDPIOO-KkxfdMpMSpD-3GGNa2TVy2UM_r4hzaldTqXQ/edit#gid=0",
+"https://docs.google.com/spreadsheets/d/1MXfe7PyjXz7x0WUEFGVrHlC54t7Z6yfYx_lLg8t2SgE/edit#gid=0",
+"https://docs.google.com/spreadsheets/d/1SrIUxtBLQKViZfEdU80CJYQ_wfz-bETGeJnF_SeFWA4/edit#gid=0",
+"https://docs.google.com/spreadsheets/d/1uUtA2ibs_FRNw7ubJl-5J76jiL4s5nsk98iZtG3slhA/edit#gid=0"]
 
 for i in range(len(all_ipm_sheets)):
     all_ipm_sheets[i] = all_ipm_sheets[i].split('/')[-2]
@@ -82,23 +94,27 @@ def main():
     # Call the Sheets API
     res_json = {}
     for i in range(len(all_ipm_sheets)):
-        res_json[helper_names[i]] = []
+        # res_json[helper_names[i]] = []
         sheet = service.spreadsheets()
         result = sheet.values().get(spreadsheetId=all_ipm_sheets[i],
                                     range=SAMPLE_RANGE_NAME).execute()
         values = result.get('values', [])
-
+        print("checking " + helper_names[i])
         if values:
             for row in values:
                 if len(row)>=5:
-                    res_json[helper_names[i]].append(unicode(row[0]))
+                    if unicode(row[0]) in res_json:
+                        res_json[unicode(row[0])] += ", " + helper_names[i]
+                    else:
+                        res_json[unicode(row[0])] = helper_names[i]
+                    # res_json[helper_names[i]].append(unicode(row[0]))
         if not values:
             print('No data found.')
 
     with open('modules.csv', 'w') as f:
         for key in res_json:
-            val = ' '.join(res_json[key])
-            f.write("%s, %s\n"%(key, val))
+            # val = ' '.join(res_json[key])
+            f.write("%s, %s\n"%(key, res_json[key]))
 
 if __name__ == '__main__':
     main()
