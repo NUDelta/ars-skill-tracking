@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class="s003">
+      <form action="/" method="POST">
+        <div class="inner-form">
+          <div class="input-field first-wrap">
+            <label for="canvas-section">Section of the canvas:</label><br>
+            <select data-trigger="" name="section">
+              {% for key in canvasKeys %}
+                <option>{{key}}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="input-field second-wrap">
+            <label for="lname">Specific column:</label><br>
+            <input type="text" id="canvas-cell" name="cell" placeholder="What are the core characteristics of your design?"><br><br>
+          </div>
+          <div class="input-field third-wrap">
+            <input type="submit" value="Submit">
+          </div>
+        </div>
+      </form>
+      <br>
+      {%if helpers %}
+      <div class="helper-information" style="background-color: white; margin-left: 2%; padding-left: 1%; padding: 1%;">
+        <div class="search-result">
+            <div class="candidates">
+                {% if helpers and not not_found %}
+                  <div>
+                    Helpers for: {{ sectionCell }}
+                  </div><br>
+                  {% for user in helpers %}
+                    <div class ="helper">{{ user[0] }} ({{ user[1]}})</div>
+                  {% endfor %}
+                {% elif not_found %}
+                  <div class="not found">
+                    This section was not found: <br> {{ sectionCell }}
+                  </div>
+                {% endif %}
+            </div>
+        {% endif %}
+        </div>
+      </div>
+    </div>
+  </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+
+
+<!-- <html>
+  <header>
+    <title>Canvas ID</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </header>
+  <body>
+      <h1 class="title">Which canvas section do you need help with?</h1>
+      <div class="search-section">
+        <form action="/" method="POST">
+          <label for="canvas-section">Section of the canvas:</label><br>
+          <select data-trigger="" name="section">
+            {% for key in canvasKeys %}
+              <option>{{key}}</option>
+            {% endfor %}
+          </select>
+          <label for="lname">Specific column:</label><br>
+          <input type="text" id="canvas-cell" name="cell" placeholder="What are the core characteristics of your design?"><br><br>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+      <div class="search-result">
+          <div class="candidates">
+              {% if helpers and not not_found %}
+                <div>
+                  Helpers for: {{ sectionCell }}
+                </div><br>
+                {% for user in helpers %}
+                  <div class ="helper">{{ user[0] }} ({{ user[1]}})</div>
+                {% endfor %}
+              {% elif not_found %}
+                <div class="not found">
+                  This section was not found: <br> {{ sectionCell }}
+                </div>
+              {% endif %}
+          </div>
+      </div>
+  </body>
+</html> -->

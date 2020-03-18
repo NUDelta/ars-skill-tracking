@@ -22,5 +22,5 @@ The *outdated* code that used to power the Douglas backend, and return helper re
 This is a python script to collect completed learning modules by members of DTR. The script dumps the information into a csv.
 
 
-## canvas-sections-completed
-This is a python script to collect information on sections completed in the cavnas. The script dumps the information into a csv.
+## dtr-canvas-mapping
+This is a python flask app hosted on heroku to provide an interface to get canvas sections completed.
