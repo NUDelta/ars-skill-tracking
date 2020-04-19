@@ -2,7 +2,7 @@ import json
 import sys
 
 
-def recommend(section_query):
+def recommend(query):
     with open("canvasSections.json") as canvas_json:
         canvas_map = json.load(canvas_json)
         search_dict = {}
@@ -16,11 +16,12 @@ def recommend(section_query):
                         search_dict[cur_key].append((name, prompt_list["status"]))
                     else:
                         search_dict[cur_key] = [(name, prompt_list["status"])]
-        if section_query in search_dict:
-            result = search_dict[section_query]
-            for helper in result:
-                if helper[1] != "Unfilled":
-                    print("Helper: " + helper[0] + " (" + helper[1] + ')')
+        match = dict(filter(lambda item: query in item[0], search_dict.items()))
+        if match:
+            for section in match:
+                for helper in match[section]:
+                    if helper[1] != "Unfilled":
+                        print("Helper: " + helper[0] + " (" + helper[1] + ')')
         else:
             print("Did not find section")
     return
