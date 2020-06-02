@@ -1,6 +1,24 @@
 import json
 import sys
 
+def scrape():
+    out_canvas = open('outCanvas.txt', 'wb')
+    with open("canvasSections.json") as canvas_json:
+        canvas_map = json.load(canvas_json)
+        search_dict = {}
+        for user in canvas_map:
+            name = user["name"]
+            sections = user["sections"][0]
+            for section in sections:
+                for prompt_list in sections[section]:
+                    cur_key = section + " --> " + prompt_list["prompt"]
+                    if cur_key in search_dict:
+                        search_dict[cur_key].append((name, prompt_list["status"]))
+                    else:
+                        search_dict[cur_key] = [(name, prompt_list["status"])]
+        for row in range(search_dict):
+
+
 
 def recommend(query):
     with open("canvasSections.json") as canvas_json:
